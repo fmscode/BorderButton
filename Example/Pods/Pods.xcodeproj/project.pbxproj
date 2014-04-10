@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11C5918DE61C4D86A98C695E /* Pods-BorderButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E536A384701B48ACB5732716 /* Pods-BorderButton-dummy.m */; };
+		30649F6DD80E406B97D0ECF0 /* libPods-BorderButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F55E7CC55444B20BE91A00B /* libPods-BorderButton.a */; };
+		71F92D2123D2485CA8724ADB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692A2F1382174E3C9D0390CA /* Foundation.framework */; };
+		78E2CE0C3B8146B48CF33B37 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6912824DFB384AE895AD217B /* Pods-dummy.m */; };
+		9BC53352E933408889136D48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692A2F1382174E3C9D0390CA /* Foundation.framework */; };
+		DB89C11E18F6C43F00B68351 /* BorderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DB89C11D18F6C43F00B68351 /* BorderButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C469AB72ED8F4C5FB306A5C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABE6043A43864D26B355785B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA4C2FA8B9C642D0A68D5C2C;
+			remoteInfo = "Pods-BorderButton";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F55E7CC55444B20BE91A00B /* libPods-BorderButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BorderButton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1246BA8CCCBB4B669786D2FE /* Pods-BorderButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BorderButton.xcconfig"; sourceTree = "<group>"; };
+		22C9B6C22AA64E439F8A4D3F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2FC26D99EEEA4358AD0B4191 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		33BC1FCFD1B0406EA4CE0AE4 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		3654D479BBD14C0FBAADEAA2 /* Pods-BorderButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BorderButton-prefix.pch"; sourceTree = "<group>"; };
+		4950C5EA228C4EA89D851CF8 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		6912824DFB384AE895AD217B /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		692A2F1382174E3C9D0390CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		973ADB9B459F46AEA2CFB7D6 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		A90989238DF644BB8E6F84A5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB89C11C18F6C43F00B68351 /* BorderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BorderButton.h; path = Classes/BorderButton.h; sourceTree = "<group>"; };
+		DB89C11D18F6C43F00B68351 /* BorderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BorderButton.m; path = Classes/BorderButton.m; sourceTree = "<group>"; };
+		E4497FF3C63A42818984F949 /* Pods-BorderButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BorderButton-Private.xcconfig"; sourceTree = "<group>"; };
+		E536A384701B48ACB5732716 /* Pods-BorderButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BorderButton-dummy.m"; sourceTree = "<group>"; };
+		ED4930184C6545AC909BCEE7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C04EF4F8B904A9ABE3D96ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71F92D2123D2485CA8724ADB /* Foundation.framework in Frameworks */,
+				30649F6DD80E406B97D0ECF0 /* libPods-BorderButton.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD5CD597DE4C4D9F92A2546A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BC53352E933408889136D48 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29B7BDE314344840AAF1B69A = {
+			isa = PBXGroup;
+			children = (
+				22C9B6C22AA64E439F8A4D3F /* Podfile */,
+				8D251359E78247EB8CD62D15 /* Development Pods */,
+				912656DCCBF240189ADDA5A7 /* Frameworks */,
+				909057D05C644FCBA11E740E /* Products */,
+				B4A71F80EE724D91988ED499 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		59FAC450C5914C119728D2FB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				692A2F1382174E3C9D0390CA /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8D251359E78247EB8CD62D15 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AACC1CEA447A40C5A2AF984E /* BorderButton */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		909057D05C644FCBA11E740E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A90989238DF644BB8E6F84A5 /* libPods.a */,
+				0F55E7CC55444B20BE91A00B /* libPods-BorderButton.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		912656DCCBF240189ADDA5A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59FAC450C5914C119728D2FB /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AACC1CEA447A40C5A2AF984E /* BorderButton */ = {
+			isa = PBXGroup;
+			children = (
+				DB89C11C18F6C43F00B68351 /* BorderButton.h */,
+				DB89C11D18F6C43F00B68351 /* BorderButton.m */,
+				E54C67BF5325406BB8BD0841 /* Support Files */,
+			);
+			name = BorderButton;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		B4A71F80EE724D91988ED499 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA5DC365C8A044F8A816F3C9 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E54C67BF5325406BB8BD0841 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1246BA8CCCBB4B669786D2FE /* Pods-BorderButton.xcconfig */,
+				E4497FF3C63A42818984F949 /* Pods-BorderButton-Private.xcconfig */,
+				E536A384701B48ACB5732716 /* Pods-BorderButton-dummy.m */,
+				3654D479BBD14C0FBAADEAA2 /* Pods-BorderButton-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		FA5DC365C8A044F8A816F3C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED4930184C6545AC909BCEE7 /* Pods.xcconfig */,
+				2FC26D99EEEA4358AD0B4191 /* Pods-acknowledgements.markdown */,
+				4950C5EA228C4EA89D851CF8 /* Pods-acknowledgements.plist */,
+				6912824DFB384AE895AD217B /* Pods-dummy.m */,
+				33BC1FCFD1B0406EA4CE0AE4 /* Pods-environment.h */,
+				973ADB9B459F46AEA2CFB7D6 /* Pods-resources.sh */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BBA772D421546ABBCA1C2A2 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA3FCF07537941D1962BD6D9 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				2E77A9809D4A4174BA24F36A /* Sources */,
+				4C04EF4F8B904A9ABE3D96ED /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFF520084C3E4B4AA0FE3466 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = A90989238DF644BB8E6F84A5 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EA4C2FA8B9C642D0A68D5C2C /* Pods-BorderButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29D174B6BC04403B899969EF /* Build configuration list for PBXNativeTarget "Pods-BorderButton" */;
+			buildPhases = (
+				E46B8B3297F4473898854603 /* Sources */,
+				BD5CD597DE4C4D9F92A2546A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BorderButton";
+			productName = "Pods-BorderButton";
+			productReference = 0F55E7CC55444B20BE91A00B /* libPods-BorderButton.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABE6043A43864D26B355785B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 9F61AD96C9CF46789B29519C /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29B7BDE314344840AAF1B69A;
+			productRefGroup = 909057D05C644FCBA11E740E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BBA772D421546ABBCA1C2A2 /* Pods */,
+				EA4C2FA8B9C642D0A68D5C2C /* Pods-BorderButton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E77A9809D4A4174BA24F36A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78E2CE0C3B8146B48CF33B37 /* Pods-dummy.m in Sources */,
+				DB89C11E18F6C43F00B68351 /* BorderButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E46B8B3297F4473898854603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C5918DE61C4D86A98C695E /* Pods-BorderButton-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFF520084C3E4B4AA0FE3466 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA4C2FA8B9C642D0A68D5C2C /* Pods-BorderButton */;
+			targetProxy = C469AB72ED8F4C5FB306A5C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6F0FDF6E515646A19149DA6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		863CD34121014B4A948DCEE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4497FF3C63A42818984F949 /* Pods-BorderButton-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-BorderButton-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A956565CBE12412EBF074A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED4930184C6545AC909BCEE7 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AB9198FB3352458BA7AA7E89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4497FF3C63A42818984F949 /* Pods-BorderButton-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-BorderButton-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF3BCB658E70494D8DD87976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		F16312CC62A44BD2A9601FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED4930184C6545AC909BCEE7 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29D174B6BC04403B899969EF /* Build configuration list for PBXNativeTarget "Pods-BorderButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				863CD34121014B4A948DCEE8 /* Debug */,
+				AB9198FB3352458BA7AA7E89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F61AD96C9CF46789B29519C /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF3BCB658E70494D8DD87976 /* Debug */,
+				6F0FDF6E515646A19149DA6E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA3FCF07537941D1962BD6D9 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A956565CBE12412EBF074A7C /* Debug */,
+				F16312CC62A44BD2A9601FD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABE6043A43864D26B355785B /* Project object */;
+}

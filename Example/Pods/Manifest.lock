@@ -1,0 +1,14 @@
+PODS:
+  - BorderButton (0.1.0)
+
+DEPENDENCIES:
+  - BorderButton (from `../`)
+
+EXTERNAL SOURCES:
+  BorderButton:
+    :path: ../
+
+SPEC CHECKSUMS:
+  BorderButton: 518a9439550108e2ec0a2caa7246eaa18b49305c
+
+COCOAPODS: 0.29.0
