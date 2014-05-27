@@ -8,4 +8,4 @@ To give a button a colored border set the class of the UIButton to ```BorderButt
 
 ![](readmeassets/screenshot1.png)
 
-If the buttons width and height are equal the class will add a circular border around the buttons frame. If the width and height are not equal, the border will be a rectangle with rounded edges.
+If the width and height are equal, the class will add a circular border around the button. If the width and height are not equal, the border will be a rectangle with rounded edges.
