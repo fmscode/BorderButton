@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = "BorderButton"
   s.version          = "0.1.0"
-  s.summary          = "A short description of BorderButton."
+  s.summary          = "Subclass of UIButton that gives a colored border around a UIButton."
   s.description      = <<-DESC
-
+                        Subclass of UIButton that gives a colored border around a UIButton. The subclass takes the textColor attribute and creates a border with that color. When a user presses the button, it will change to be filled with the border color creating a solid color button.
                        DESC
   s.homepage         = "https://github.com/fmscode/BorderButton"
   s.license          = 'MIT'
