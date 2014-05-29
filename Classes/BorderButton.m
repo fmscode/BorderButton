@@ -60,13 +60,18 @@
         circleLayer.fillColor = nil;
     }
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
+    [super setTitleColor:color forState:state];
+    borderColor = color;
+    circleLayer.strokeColor = borderColor.CGColor;
 }
-*/
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end
