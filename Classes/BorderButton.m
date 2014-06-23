@@ -10,10 +10,10 @@
 
 @interface BorderButton ()
 
-    @property CAShapeLayer *circleLayer;
-    @property UIColor *borderColor;
+@property CAShapeLayer *circleLayer;
+@property UIColor *borderColor;
 
-    - (void)setupButton;
+- (void)setupButton;
 @end
 
 @implementation BorderButton
@@ -36,8 +36,7 @@
 }
 - (void)setupButton{
     _borderColor = self.titleLabel.textColor;
-    if (!_circleLayer)
-    {
+    if (!_circleLayer) {
         _circleLayer = [CAShapeLayer layer];
     }
     
