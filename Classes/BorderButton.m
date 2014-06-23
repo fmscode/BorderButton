@@ -8,11 +8,12 @@
 
 #import "BorderButton.h"
 
-@interface BorderButton () {
-    CAShapeLayer *circleLayer;
-    UIColor *borderColor;
-}
-- (void)setupButton;
+@interface BorderButton ()
+
+    @property CAShapeLayer *circleLayer;
+    @property UIColor *borderColor;
+
+    - (void)setupButton;
 @end
 
 @implementation BorderButton
@@ -34,36 +35,46 @@
     return self;
 }
 - (void)setupButton{
-    borderColor = self.titleLabel.textColor;
-    circleLayer = [CAShapeLayer layer];
-    circleLayer.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-    circleLayer.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    _borderColor = self.titleLabel.textColor;
+    if (!_circleLayer)
+    {
+        _circleLayer = [CAShapeLayer layer];
+    }
+    
+    _circleLayer.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    _circleLayer.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     UIBezierPath *path;
     if (self.frame.size.width == self.frame.size.height){
         path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
     }else {
         path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:8];
     }
-    circleLayer.path = path.CGPath;
+    _circleLayer.path = path.CGPath;
     path = nil;
-    circleLayer.strokeColor = borderColor.CGColor;
-    circleLayer.lineWidth = 2.0f;
-    circleLayer.fillColor = nil;
-    [[self layer] insertSublayer:circleLayer below:self.titleLabel.layer];
+    _circleLayer.strokeColor = _borderColor.CGColor;
+    _circleLayer.lineWidth = 2.0f;
+    _circleLayer.fillColor = nil;
+    [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
 - (void)setHighlighted:(BOOL)highlighted{
-    if (highlighted){
-        circleLayer.fillColor = borderColor.CGColor;
+    if (highlighted) {
+        _circleLayer.fillColor = _borderColor.CGColor;
         self.titleLabel.textColor = [UIColor whiteColor];
-    }else{
-        self.titleLabel.textColor = borderColor;
-        circleLayer.fillColor = nil;
+    } else {
+        self.titleLabel.textColor = _borderColor;
+        _circleLayer.fillColor = nil;
     }
 }
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
     [super setTitleColor:color forState:state];
-    borderColor = color;
-    circleLayer.strokeColor = borderColor.CGColor;
+    _borderColor = color;
+    _circleLayer.strokeColor = _borderColor.CGColor;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self setupButton];
 }
 /*
  // Only override drawRect: if you perform custom drawing.
