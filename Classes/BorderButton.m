@@ -36,9 +36,15 @@
 }
 - (void)setupButton{
     _borderColor = self.titleLabel.textColor;
+    self.tintColor = _borderColor;
+    
+    self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 4);
+    self.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
+    
     if (!_circleLayer)
     {
         _circleLayer = [CAShapeLayer layer];
+        [[self layer] insertSublayer:_circleLayer below:self.imageView.layer];
     }
     
     _circleLayer.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
@@ -54,21 +60,36 @@
     _circleLayer.strokeColor = _borderColor.CGColor;
     _circleLayer.lineWidth = 2.0f;
     _circleLayer.fillColor = nil;
-    [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
 - (void)setHighlighted:(BOOL)highlighted{
     if (highlighted) {
+        self.tintColor = [UIColor whiteColor];
         _circleLayer.fillColor = _borderColor.CGColor;
         self.titleLabel.textColor = [UIColor whiteColor];
     } else {
         self.titleLabel.textColor = _borderColor;
         _circleLayer.fillColor = nil;
+        self.tintColor = _borderColor;
     }
 }
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
     [super setTitleColor:color forState:state];
-    _borderColor = color;
+    
+    if (state == UIControlStateNormal)
+    {
+        _borderColor = color;
+    }
+    
+    self.tintColor = _borderColor;
+    
     _circleLayer.strokeColor = _borderColor.CGColor;
+}
+
+- (void)setEnabled:(BOOL)enabled
+{
+    [super setEnabled:enabled];
+    
+    [self setupButton];
 }
 
 - (void)layoutSubviews
