@@ -14,6 +14,8 @@
 @property UIColor *borderColor;
 
 - (void)setupButton;
+@property  (nonatomic,assign)  bool  mbhighlight;//是否highlight
+
 @end
 
 @implementation BorderButton
@@ -21,6 +23,7 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    _mbhighlight = false;
     if (self) {
         // Initialization code
         [self setupButton];
@@ -56,6 +59,7 @@
     [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
 - (void)setHighlighted:(BOOL)highlighted{
+    _mbhighlight = highlighted;
     if (highlighted) {
         _circleLayer.fillColor = _borderColor.CGColor;
         self.titleLabel.textColor = [UIColor whiteColor];
@@ -74,6 +78,7 @@
 {
     [super layoutSubviews];
     [self setupButton];
+    [self  setHighlighted:_mbhighlight];
 }
 /*
  // Only override drawRect: if you perform custom drawing.
