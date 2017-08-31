@@ -71,7 +71,17 @@
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
-    // [super setHighlighted:highlighted]; // NOTE: Calling super() here breaks functionality.
+    [super setHighlighted:highlighted];
+    ////
+    
+    [self configureButtonInversion];
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    ////
+    
     [self configureButtonInversion];
 }
 
