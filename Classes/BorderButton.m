@@ -12,7 +12,6 @@
 
 @property CAShapeLayer *circleLayer;
 
-- (void)setupButton;
 
 @end
 
@@ -21,18 +20,21 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    
     if (self) {
-        // Initialization code
         [self setupButton];
     }
+    
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
-    if (self){
+    
+    if (self) {
         [self setupButton];
     }
+    
     return self;
 }
 
@@ -77,7 +79,6 @@
 {
     _borderWidth=borderWidth;
     _circleLayer.lineWidth = (_borderWidth ?: 2.0f);
-    
 }
 
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
