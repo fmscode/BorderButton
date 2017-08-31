@@ -11,7 +11,6 @@
 @interface BorderButton ()
 
 @property CAShapeLayer *circleLayer;
-@property UIColor *borderColor;
 
 - (void)setupButton;
 
@@ -38,9 +37,16 @@
 }
 
 - (void)setupButton{
-    _borderColor = self.titleLabel.textColor;
     if (!_circleLayer) {
+        // NOTE: These rows are to prevent breaking prior functionality, in lieu of prior explicit `UIControlStateHighlighted` color definition. (was overridden in code)
+        
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted | UIControlStateSelected];
+        ////
+        
         _circleLayer = [CAShapeLayer layer];
+        _circleLayer.strokeColor=[[self titleColorForState:UIControlStateNormal] CGColor];
     }
     
     _circleLayer.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
@@ -53,20 +59,18 @@
     }
     _circleLayer.path = path.CGPath;
     path = nil;
-    _circleLayer.strokeColor = _borderColor.CGColor;
     [self setBorderWidth:_borderWidth];
-    _circleLayer.fillColor = nil;
+    [self configureButtonInversion];
     [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
 
-- (void)setHighlighted:(BOOL)highlighted{
-    if (highlighted) {
-        _circleLayer.fillColor = _borderColor.CGColor;
-        self.titleLabel.textColor = [UIColor whiteColor];
-    } else {
-        self.titleLabel.textColor = _borderColor;
-        _circleLayer.fillColor = nil;
-    }
+- (void)configureButtonInversion {
+    [_circleLayer setFillColor:(([self state]==UIControlStateSelected || [self state]==UIControlStateHighlighted || [self state]==(UIControlStateHighlighted | UIControlStateSelected)) ? _circleLayer.strokeColor : nil)];
+}
+
+- (void)setHighlighted:(BOOL)highlighted {
+    // [super setHighlighted:highlighted]; // NOTE: Calling super() here breaks functionality.
+    [self configureButtonInversion];
 }
 
 - (void)setBorderWidth:(CGFloat)borderWidth
@@ -76,10 +80,14 @@
     
 }
 
-- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
     [super setTitleColor:color forState:state];
-    _borderColor = color;
-    _circleLayer.strokeColor = _borderColor.CGColor;
+    ////
+    
+    if (state==UIControlStateNormal) {
+        _circleLayer.strokeColor = color.CGColor;
+        [self configureButtonInversion];
+    }
 }
 
 - (void)layoutSubviews
