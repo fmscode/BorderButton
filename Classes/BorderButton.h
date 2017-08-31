@@ -10,4 +10,7 @@
 
 @interface BorderButton : UIButton
 
+@property (readwrite, assign, nonatomic) CGFloat borderWidth;
+
+
 @end

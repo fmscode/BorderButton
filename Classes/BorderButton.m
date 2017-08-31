@@ -51,7 +51,7 @@
     _circleLayer.path = path.CGPath;
     path = nil;
     _circleLayer.strokeColor = _borderColor.CGColor;
-    _circleLayer.lineWidth = 2.0f;
+    _circleLayer.lineWidth = (_borderWidth ?: 2.0f);
     _circleLayer.fillColor = nil;
     [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
