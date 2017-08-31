@@ -69,6 +69,12 @@
     }
 }
 
+- (void)setBorderWidth:(CGFloat)borderWidth
+{
+    [_circleLayer setLineWidth:borderWidth];
+    
+}
+
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
     [super setTitleColor:color forState:state];
     _borderColor = color;
