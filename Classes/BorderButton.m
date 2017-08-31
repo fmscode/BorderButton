@@ -54,7 +54,7 @@
     _circleLayer.path = path.CGPath;
     path = nil;
     _circleLayer.strokeColor = _borderColor.CGColor;
-    _circleLayer.lineWidth = (_borderWidth ?: 2.0f);
+    [self setBorderWidth:_borderWidth];
     _circleLayer.fillColor = nil;
     [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
@@ -71,7 +71,8 @@
 
 - (void)setBorderWidth:(CGFloat)borderWidth
 {
-    [_circleLayer setLineWidth:borderWidth];
+    _borderWidth=borderWidth;
+    _circleLayer.lineWidth = (_borderWidth ?: 2.0f);
     
 }
 
