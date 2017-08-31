@@ -14,6 +14,7 @@
 @property UIColor *borderColor;
 
 - (void)setupButton;
+
 @end
 
 @implementation BorderButton
@@ -27,6 +28,7 @@
     }
     return self;
 }
+
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self){
@@ -34,6 +36,7 @@
     }
     return self;
 }
+
 - (void)setupButton{
     _borderColor = self.titleLabel.textColor;
     if (!_circleLayer) {
@@ -45,7 +48,7 @@
     UIBezierPath *path;
     if (self.frame.size.width == self.frame.size.height){
         path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
-    }else {
+    } else {
         path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:8];
     }
     _circleLayer.path = path.CGPath;
@@ -55,6 +58,7 @@
     _circleLayer.fillColor = nil;
     [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
+
 - (void)setHighlighted:(BOOL)highlighted{
     if (highlighted) {
         _circleLayer.fillColor = _borderColor.CGColor;
@@ -64,6 +68,7 @@
         _circleLayer.fillColor = nil;
     }
 }
+
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
     [super setTitleColor:color forState:state];
     _borderColor = color;
@@ -75,13 +80,5 @@
     [super layoutSubviews];
     [self setupButton];
 }
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
 
 @end
