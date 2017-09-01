@@ -42,13 +42,15 @@
     if (!_circleLayer) {
         // NOTE: These rows are to prevent breaking prior functionality, in lieu of prior explicit `UIControlStateHighlighted` color definition. (was overridden in code)
         
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled | UIControlStateSelected];
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted | UIControlStateSelected];
         ////
         
         _circleLayer = [CAShapeLayer layer];
-        _circleLayer.strokeColor=[[self titleColorForState:UIControlStateNormal] CGColor];
+        [self configureStrokeColor];
     }
     
     _circleLayer.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
@@ -66,8 +68,21 @@
     [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
 
+- (void)configureStrokeColor {
+    [_circleLayer setStrokeColor:[[self titleColorForState:(([self state]==(UIControlStateDisabled) || [self state]==(UIControlStateDisabled | UIControlStateSelected)) ? UIControlStateDisabled : UIControlStateNormal)] CGColor]];
+}
+
 - (void)configureButtonInversion {
-    [_circleLayer setFillColor:(([self state]==UIControlStateSelected || [self state]==UIControlStateHighlighted || [self state]==(UIControlStateHighlighted | UIControlStateSelected)) ? _circleLayer.strokeColor : nil)];
+    [_circleLayer setFillColor:(([self state]==UIControlStateSelected || [self state]==UIControlStateHighlighted || [self state]==(UIControlStateDisabled | UIControlStateSelected) || [self state]==(UIControlStateHighlighted | UIControlStateSelected)) ? _circleLayer.strokeColor : nil)];
+}
+
+- (void)setEnabled:(BOOL)enabled
+{
+    [super setEnabled:enabled];
+    ////
+    
+    [self configureButtonInversion];
+    [self configureStrokeColor];
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
@@ -96,8 +111,8 @@
     ////
     
     if (state==UIControlStateNormal) {
-        _circleLayer.strokeColor = color.CGColor;
         [self configureButtonInversion];
+        [self configureStrokeColor];
     }
 }
 
