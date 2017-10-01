@@ -56,7 +56,7 @@
     _circleLayer.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     _circleLayer.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     UIBezierPath *path;
-    if (self.frame.size.width == self.frame.size.height){
+    if (fabs(self.frame.size.width-self.frame.size.height)<0.1f) { // NOTE: Guards against floating point rounding issues.
         path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
     } else {
         path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:8];
