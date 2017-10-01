@@ -11,9 +11,8 @@
 @interface BorderButton ()
 
 @property CAShapeLayer *circleLayer;
-@property UIColor *borderColor;
 
-- (void)setupButton;
+
 @end
 
 @implementation BorderButton
@@ -21,53 +20,100 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    
     if (self) {
-        // Initialization code
         [self setupButton];
     }
+    
     return self;
 }
+
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
-    if (self){
+    
+    if (self) {
         [self setupButton];
     }
+    
     return self;
 }
+
 - (void)setupButton{
-    _borderColor = self.titleLabel.textColor;
     if (!_circleLayer) {
+        // NOTE: These rows are to prevent breaking prior functionality, in lieu of prior explicit `UIControlStateHighlighted` color definition. (was overridden in code)
+        
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled | UIControlStateSelected];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted | UIControlStateSelected];
+        ////
+        
         _circleLayer = [CAShapeLayer layer];
+        [self configureStrokeColor];
     }
     
     _circleLayer.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
     _circleLayer.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     UIBezierPath *path;
-    if (self.frame.size.width == self.frame.size.height){
+    if (fabs(self.frame.size.width-self.frame.size.height)<0.1f) { // NOTE: Guards against floating point rounding issues.
         path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
-    }else {
+    } else {
         path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:8];
     }
     _circleLayer.path = path.CGPath;
     path = nil;
-    _circleLayer.strokeColor = _borderColor.CGColor;
-    _circleLayer.lineWidth = 2.0f;
-    _circleLayer.fillColor = nil;
+    [self setBorderWidth:_borderWidth];
+    [self configureButtonInversion];
     [[self layer] insertSublayer:_circleLayer below:self.titleLabel.layer];
 }
-- (void)setHighlighted:(BOOL)highlighted{
-    if (highlighted) {
-        _circleLayer.fillColor = _borderColor.CGColor;
-        self.titleLabel.textColor = [UIColor whiteColor];
-    } else {
-        self.titleLabel.textColor = _borderColor;
-        _circleLayer.fillColor = nil;
-    }
+
+- (void)configureStrokeColor {
+    [_circleLayer setStrokeColor:[[self titleColorForState:(([self state]==(UIControlStateDisabled) || [self state]==(UIControlStateDisabled | UIControlStateSelected)) ? UIControlStateDisabled : UIControlStateNormal)] CGColor]];
 }
-- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
+
+- (void)configureButtonInversion {
+    [_circleLayer setFillColor:(([self state]==UIControlStateSelected || [self state]==UIControlStateHighlighted || [self state]==(UIControlStateDisabled | UIControlStateSelected) || [self state]==(UIControlStateHighlighted | UIControlStateSelected)) ? _circleLayer.strokeColor : nil)];
+}
+
+- (void)setEnabled:(BOOL)enabled
+{
+    [super setEnabled:enabled];
+    ////
+    
+    [self configureButtonInversion];
+    [self configureStrokeColor];
+}
+
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    ////
+    
+    [self configureButtonInversion];
+}
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    ////
+    
+    [self configureButtonInversion];
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth
+{
+    _borderWidth=borderWidth;
+    _circleLayer.lineWidth = (_borderWidth ?: 2.0f);
+}
+
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
     [super setTitleColor:color forState:state];
-    _borderColor = color;
-    _circleLayer.strokeColor = _borderColor.CGColor;
+    ////
+    
+    if (state==UIControlStateNormal) {
+        [self configureButtonInversion];
+        [self configureStrokeColor];
+    }
 }
 
 - (void)layoutSubviews
@@ -75,13 +121,5 @@
     [super layoutSubviews];
     [self setupButton];
 }
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
 
 @end
